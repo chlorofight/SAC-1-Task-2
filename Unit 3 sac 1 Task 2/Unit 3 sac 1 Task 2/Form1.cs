@@ -32,13 +32,17 @@ namespace Unit_3_sac_1_Task_2
         }
         float fTotalProfit = 0f;
 
+        //open the file
         private void openFile()
         {
+            
             OpenFileDialog ofd = new OpenFileDialog();
             try
             {
+                
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
+                    //only run the function if the file was selected
                     main(ofd.FileName);
                 }
                 else if (ofd.ShowDialog() == DialogResult.Cancel)
@@ -52,6 +56,9 @@ namespace Unit_3_sac_1_Task_2
             }
         }
 
+        //Function: Read the csv file to the data grid view
+        //Input:string, filePath
+        //Output:List of strings, to the data grid view
         private void main(string filePath)
         {   
             List<string> lines = new List<string>();
@@ -67,7 +74,7 @@ namespace Unit_3_sac_1_Task_2
 
         //Function : Calc the profit
         //Input: String, purchedPriceIn , string, salePriceIn
-        //Output: float, salePriceIn - PurchedpriceIn , float, 0 , float Purchedprice * -1
+        //Output: float, salePriceIn - PurchedpriceIn , float, 0 , float Purchedprice * -1, put the total profit to a var
 
         private float Calc(string purchedPriceIn, string salePriceIn)
         {
